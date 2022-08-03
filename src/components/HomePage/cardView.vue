@@ -26,10 +26,10 @@
                 <u>
                   <li
                     class="genre"
-                    v-for="(genre, index) in item.genre_ids"
+                    v-for="(genre, index) in item.genres"
                     :key="index"
                   >
-                    {{ genre }}
+                    {{ genre.name }}
                   </li>
                 </u>
               </div>

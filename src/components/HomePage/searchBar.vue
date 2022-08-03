@@ -10,6 +10,7 @@
           textInput
           utc
           @update:modelValue="setDate"
+          uid="range-date-picker"
           style="width: 51%"
         />
       </div>
@@ -26,8 +27,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const date = ref();
 
-    const setDate = (value) => {
-      date.value = value;
+    const setDate = (modelData) => {
+      date.value = modelData;
     };
 
     // const textInputOptions = ref({
@@ -36,6 +37,7 @@ export default defineComponent({
 
     const search = () => {
       emit("change", date.value);
+      // emit("change", date.value[1].toJSON());
     };
 
     return { setDate, search, date };
